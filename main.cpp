@@ -6,12 +6,13 @@
 
 int main() {
     
-    std::shared_ptr<Sensor> imu = std::make_shared<IMUSensor>();
-    std::shared_ptr<Sensor> gps = std::make_shared<GPSSensor>();
+    auto imu = std::make_unique<IMUSensor>();
+    auto gps = std::make_unique<GPSSensor>();
 
     SensorManager manager;
-    manager.addSensor(imu);
-    manager.addSensor(gps);
+    manager.addSensor(std::move(imu));
+    manager.addSensor(std::move(gps));
+
 
     auto data = manager.readAllSensors();
 

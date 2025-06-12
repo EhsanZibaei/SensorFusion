@@ -7,10 +7,10 @@
 
 class SensorManager {
 public:
-    void addSensor(std::shared_ptr<Sensor> sensor);
+    void addSensor(std::unique_ptr<Sensor> sensor);
     std::vector<SensorData> readAllSensors() const;
 private:
-    std::vector<std::shared_ptr<Sensor>> sensors_;
+    std::vector<std::unique_ptr<Sensor>> sensors_;
 };
 
 #endif // SENSORMANAGER_H
