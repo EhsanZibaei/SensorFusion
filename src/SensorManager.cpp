@@ -2,9 +2,10 @@
 #include<iostream>
 #include<string>
 #include<vector>
+#include<algorithm>
 
 void SensorManager::addSensor(std::shared_ptr<Sensor> sensor) {
-    sensors_.push_back(std::move(sensor));
+    sensors_.push_back(sensor);
 }
 
 std::vector<SensorData> SensorManager::readAllSensors() const {
@@ -24,4 +25,12 @@ std::vector<std::string> SensorManager::getNames(){
     }
     return names;
 }
+
+void SensorManager::removeSensor(const std::string& sensor_name){
+    auto it = std::remove_if(sensors_.begin(), sensors_.end(),
+        [&](std::shared_ptr<Sensor> sensor){return sensor->getName() == sensor_name;});
+    sensors_.erase(it, sensors_.end());
+}
+
+
 

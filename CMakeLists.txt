@@ -8,6 +8,7 @@ set(SOURCES
     src/GPSSensor.cpp
     src/SensorManager.cpp
     src/FusionModule.cpp
+    src/CompassSensor.cpp
     src/main.cpp
 )
 

@@ -2,16 +2,18 @@
 #include "FusionModule.h"
 #include "IMUSensor.h"
 #include "GPSSensor.h"
+#include "CompassSensor.h"
 #include<iostream>
 
 int main() {
     
     auto imu = std::make_shared<IMUSensor>("hd_imu");
-    auto gps = std::make_unique<GPSSensor>();
+    auto gps = std::make_shared<GPSSensor>();
+    
 
     SensorManager manager;
     manager.addSensor(imu);
-    manager.addSensor(std::move(gps));
+    manager.addSensor(gps);
 
 
     auto data = manager.readAllSensors();
@@ -36,6 +38,14 @@ int main() {
 
     std::unique_ptr<IMUSensor> imu_unique(new IMUSensor("e.g. "));
     std::cout << "This is the second imu: " << imu_unique->getName() << std::endl;
+    
+
+    auto compass = std::make_shared<CompassSensor>("higher_than_20");
+    std::cout << "This is the compass: " << compass->getName() << std::endl;
+    
+    manager.removeSensor("hd_imu");
+    manager.addSensor(compass);
+
     
     return 0;
 }
