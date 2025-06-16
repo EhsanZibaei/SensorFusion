@@ -8,7 +8,7 @@ set(SOURCES
     src/GPSSensor.cpp
     src/SensorManager.cpp
     src/FusionModule.cpp
-    main.cpp
+    src/main.cpp
 )
 
 include_directories(${CMAKE_SOURCE_DIR}/include)

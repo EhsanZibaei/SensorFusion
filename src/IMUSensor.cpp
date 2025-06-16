@@ -1,9 +1,10 @@
 #include "IMUSensor.h"
 
-IMUSensor::IMUSensor() = default;
+IMUSensor::IMUSensor(std::string given_name):name(given_name) {
+};
 
 std::string IMUSensor::getName() const {
-    return "IMU Sensor";
+    return name;
 }
 
 SensorData IMUSensor::readData() {
