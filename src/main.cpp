@@ -46,6 +46,8 @@ int main() {
     manager.removeSensor("hd_imu");
     manager.addSensor(compass);
 
-    
+    for (const auto& sensor : manager.getNames()){
+        std::cout << "looping through sensor names: " << sensor << std::endl;
+    }
     return 0;
 }

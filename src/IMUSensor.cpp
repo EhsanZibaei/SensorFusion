@@ -1,6 +1,6 @@
 #include "IMUSensor.h"
 
-IMUSensor::IMUSensor(std::string given_name):name(given_name) {
+IMUSensor::IMUSensor(const std::string& given_name):name(given_name) {
 };
 
 std::string IMUSensor::getName() const {

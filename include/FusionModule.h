@@ -3,13 +3,7 @@
 
 #include<vector>
 #include "Sensor.h"
-
-struct FusionResult {
-    double fusedX;
-    double fusedY;
-    double fusedZ;
-};
-
+#include "FusionResult.h"
 class FusionModule {
     public:
     FusionResult fuse(const std::vector<SensorData>& sensorDataList) const;
