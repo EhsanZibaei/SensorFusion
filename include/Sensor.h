@@ -9,7 +9,7 @@ class Sensor {
 public:
     virtual std::string getName() const = 0;
     virtual SensorData readData() = 0;
-    virtual ~Sensor() {std::cout << "destrcutor of Sensor" << std::endl;};
+    virtual ~Sensor() = default;
 };
 
 #endif // SENSOR_H

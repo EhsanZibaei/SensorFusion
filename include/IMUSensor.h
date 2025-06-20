@@ -11,7 +11,7 @@ public:
     IMUSensor(const std::string& given_name);
     std::string getName() const override;
     SensorData readData() override;
-    ~IMUSensor() {std::cout << "destrcutor of IMU" << std::endl;};
+    // ~IMUSensor() {std::cout << "destrcutor of IMU" << std::endl;};
 
 };
 

@@ -4,9 +4,11 @@
 #include<vector>
 #include "Sensor.h"
 #include "FusionResult.h"
+
 class FusionModule {
     public:
     FusionResult fuse(const std::vector<SensorData>& sensorDataList) const;
+    FusionResult fuse(std::vector<SensorData>&& sensorDataList) const;
 
 };
 #endif
