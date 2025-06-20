@@ -44,3 +44,4 @@ FusionResult FusionModule::fuse(std::vector<SensorData>&& sensorDataList) const 
     std::cout << "DEBUG: Called fuse(std::vector<SensorData>&&) - move semantics enabled!" << std::endl;
     return result;
 }
+
